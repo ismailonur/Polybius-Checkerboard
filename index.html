@@ -12,10 +12,34 @@
 </head>
 
 <body>
-    <div class="container p-3">
-        <h1 class="row h-100 justify-content-center align-items-center" id="header">Bilgi Sistemleri ve Güvenliği </br>
-            POLYBIUS'UN DAMA TAHTASI
-        </h1>
+    <div class="container my-5">
+        <div class="container p-3">
+            <h1 class="row h-100 justify-content-center align-items-center" id="header">Bilgi Sistemleri ve Güvenliği
+                </br>
+                POLYBIUS'UN DAMA TAHTASI
+            </h1>
+
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center" style="height: 350px">
+            <div class="row">
+                <div class="container" style="height: 50px">
+                    <input style="width: 250px" type="text" id="SifreCoz" placeholder="Çözülecek Şifreyi Yazın...">
+
+                    <button id="sifreCozButton">Şifre Çöz</button>
+                </div>
+                <div class="container">
+                    <input style="width: 250px" type="text" id="SifreOlustur" placeholder="Şifrelenecek Metni Yazın...">
+
+                    <button id="sifreOlusturButton">Şifre Oluştur</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center">
+            <p id="demo"></p>
+        </div>
+
     </div>
 
     <script src="app.js"></script>
