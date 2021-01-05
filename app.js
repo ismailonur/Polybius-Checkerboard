@@ -1,22 +1,18 @@
-var sifreCozBtn=document.getElementById("sifreCozButton");
-var sifreOlusturBtn=document.getElementById("sifreOlusturButton");
+var sifreCozBtn = document.getElementById("sifreCozButton");
+var sifreOlusturBtn = document.getElementById("sifreOlusturButton");
 
-sifreCozBtn.onclick=function(){
-    var ad=document.getElementById("SifreCoz");
-    //window.alert("Hoşgeldin: "+ad.value);
+sifreCozBtn.onclick = function () {
+    var ad = document.getElementById("SifreCoz");
     document.getElementById("demo").innerHTML = ad.value;
-    
     sifre = ad.value;
 
     RunSifreCoz()
 }
 
-sifreOlusturBtn.onclick=function(){
-    var ad=document.getElementById("SifreOlustur");
-    //window.alert("Hoşgeldin: "+ad.value);
+sifreOlusturBtn.onclick = function () {
+    var ad = document.getElementById("SifreOlustur");
     document.getElementById("demo").innerHTML = ad.value;
-    
-    metin = ad.value;
+    metin = ad.value.toUpperCase();
 
     RunSifreOlustur()
 }
@@ -24,6 +20,8 @@ sifreOlusturBtn.onclick=function(){
 var sifre = ""
 var metin = ""
 
+//var sifre = "44423324322444114254" 
+//var metin = "TRMILITARY"
 
 var array = [
     ["A", "B", "C", "D", "E"],
@@ -41,7 +39,7 @@ var harfler = {
     X: "51", W: "52", V: "53", Y: "54", Z: "55"
 };
 
-function RunSifreCoz(){
+function RunSifreCoz() {
     var regex = /\d\d/g;
     var resSifre = sifre.match(regex);
     var resSifreSonuc = "";
@@ -49,18 +47,20 @@ function RunSifreCoz(){
     resSifre.forEach((x) => {
         resSifreSonuc += (array[x[0] - 1][x[1] - 1])
     })
+
     document.getElementById("demo").innerHTML = resSifreSonuc
-    resSifreSonuc="";
+    resSifreSonuc = "";
 }
 
-function RunSifreOlustur(){
+function RunSifreOlustur() {
     var resMetin = metin.split("");
     var resMetinSonuc = "";
 
     resMetin.forEach((x) => {
         resMetinSonuc += harfler[x]
     })
+    
     document.getElementById("demo").innerHTML = resMetinSonuc;
-    resMetinSonuc="";
+    resMetinSonuc = "";
 }
 
